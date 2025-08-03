@@ -14,43 +14,29 @@
 </head>
 <body class="bg-black text-white">
 
-  <!-- Header -->
+  <!-- Header с меню и лого -->
   <header class="bg-black text-white py-4 sticky top-0 z-50 shadow">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
 
-      <!-- Лого -->
-      <a href="index.html" class="text-xl md:text-2xl font-semibold tracking-tight">itunes.bg</a>
+      <!-- Икона ☰ за отваряне на меню -->
+      <button id="menu-toggle" class="text-3xl focus:outline-none">
+        &#9776; <!-- това е ☰ -->
+      </button>
 
-      <!-- Навигация за големи екрани -->
-      <nav class="hidden md:flex space-x-6 text-sm md:text-lg font-light">
-        <a href="index.html" class="hover:underline">Начало</a>
-        <a href="about.html" class="hover:underline">За нас</a>
-        <a href="payment.html" class="hover:underline">Плащане</a>
-        <a href="gallery.html" class="hover:underline">Галерия</a>
-        <a href="faq.html" class="hover:underline">Въпроси</a>
-        <a href="contact.html" class="hover:underline">Контакти</a>
-      </nav>
-
-      <!-- Меню с 3 точки за мобилни устройства -->
-      <div class="md:hidden relative">
-        <button id="menu-toggle" class="flex flex-col justify-center items-center space-y-1 focus:outline-none">
-          <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
-          <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
-          <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
-        </button>
-
-        <!-- Dropdown меню -->
-        <div id="dropdown-menu" class="hidden absolute right-0 mt-2 w-40 bg-black border border-gray-700 rounded-lg shadow-lg py-2 z-50">
-          <a href="index.html" class="block px-4 py-2 hover:bg-gray-800">Начало</a>
-          <a href="about.html" class="block px-4 py-2 hover:bg-gray-800">За нас</a>
-          <a href="payment.html" class="block px-4 py-2 hover:bg-gray-800">Плащане</a>
-          <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800">Галерия</a>
-          <a href="faq.html" class="block px-4 py-2 hover:bg-gray-800">Въпроси</a>
-          <a href="contact.html" class="block px-4 py-2 hover:bg-gray-800">Контакти</a>
-        </div>
-      </div>
+      <!-- Лого вдясно -->
+      <a href="index.html" class="text-xl font-semibold tracking-tight">itunes.bg</a>
     </div>
   </header>
+
+  <!-- Скрито меню (ще се показва при клик) -->
+  <div id="dropdown-menu" class="hidden fixed top-16 left-4 bg-black border border-gray-700 rounded-lg shadow-lg w-48 py-2 z-50">
+    <a href="index.html" class="block px-4 py-2 hover:bg-gray-800">Начало</a>
+    <a href="about.html" class="block px-4 py-2 hover:bg-gray-800">За нас</a>
+    <a href="payment.html" class="block px-4 py-2 hover:bg-gray-800">Плащане</a>
+    <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800">Галерия</a>
+    <a href="faq.html" class="block px-4 py-2 hover:bg-gray-800">ЧЗВ</a>
+    <a href="contact.html" class="block px-4 py-2 hover:bg-gray-800">Контакти</a>
+  </div>
 
   <!-- Основно съдържание -->
   <main class="px-6 py-20 max-w-5xl mx-auto text-center" id="top">
@@ -72,13 +58,13 @@
     &copy; 2025 itunes.bg – Premium AirPods Reseller. Не е свързан с Apple Inc.
   </footer>
 
-  <!-- GSAP Анимации -->
+  <!-- GSAP и JS за менюто -->
   <script>
     gsap.from("h1", { y: -80, opacity: 0, duration: 1 });
     gsap.from("p", { y: 40, opacity: 0, delay: 0.3, duration: 1 });
     gsap.from("img", { scale: 0.9, opacity: 0, delay: 0.6, duration: 1 });
 
-    // Dropdown toggle
+    // Dropdown меню
     document.getElementById("menu-toggle").addEventListener("click", function () {
       const menu = document.getElementById("dropdown-menu");
       menu.classList.toggle("hidden");
@@ -86,4 +72,3 @@
   </script>
 </body>
 </html>
-
