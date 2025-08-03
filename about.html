@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bg">
 <head>
@@ -13,35 +14,42 @@
   </style>
 </head>
 <body class="bg-black text-white">
-  
-<header class="bg-black text-white py-4 sticky top-0 z-50 shadow">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
-    <a href="index.html" class="text-xl md:text-2xl font-semibold tracking-tight">itunes.bg</a>
-    <nav class="space-x-4 md:space-x-8 text-sm md:text-lg font-light">
-      <a href="index.html" class="hover:underline">Начало</a>
-      <a href="about.html" class="hover:underline">За нас</a>
-      <a href="payment.html" class="hover:underline">Плащане</a>
-      <a href="gallery.html" class="hover:underline">Галерия</a>
-      <a href="faq.html" class="hover:underline">Въпроси</a>
-      <a href="contact.html" class="hover:underline">Контакти</a>
-    </nav>
+  <!-- Header -->
+  <header class="bg-black text-white py-4 sticky top-0 z-50 shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
+      <!-- Икона ☰ за меню -->
+      <button id="menu-toggle" class="text-3xl focus:outline-none">&#9776;</button>
+      <a href="index.html" class="text-xl font-semibold tracking-tight">itunes.bg</a>
+    </div>
+  </header>
+
+  <!-- Dropdown меню -->
+  <div id="dropdown-menu" class="hidden fixed top-16 left-4 bg-black border border-gray-700 rounded-lg shadow-lg w-48 py-2 z-50">
+    <a href="index.html" class="block px-4 py-2 hover:bg-gray-800">Начало</a>
+    <a href="about.html" class="block px-4 py-2 hover:bg-gray-800">За нас</a>
+    <a href="payment.html" class="block px-4 py-2 hover:bg-gray-800">Плащане</a>
+    <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-800">Галерия</a>
+    <a href="faq.html" class="block px-4 py-2 hover:bg-gray-800">ЧЗВ</a>
+    <a href="contact.html" class="block px-4 py-2 hover:bg-gray-800">Контакти</a>
   </div>
-</header>
 
+  <!-- Основно съдържание -->
   <main class="px-6 py-20 max-w-5xl mx-auto text-center">
-    
-<h1 class="text-5xl font-bold mb-8">Кои сме ние</h1>
-<p class="text-xl text-gray-300 mb-6">
-  itunes.bg е онлайн магазин, специализиран в продажбата на оригинални <strong>AirPods Pro 2</strong>. Работим директно с проверени вносители и гарантираме автентичност.
-</p>
-<p class="text-xl text-gray-300">Ние поставяме клиента на първо място – отговаряме бързо, доставяме бързо, и обслужваме качествено.</p>
-
+    <h1 class="text-4xl font-bold mb-6">За нас</h1>
+    <p class="text-lg text-gray-300">Това е страницата „За нас“ от itunes.bg</p>
   </main>
-  
-<footer class="bg-black text-gray-400 text-sm text-center py-10 border-t border-gray-700 mt-20">
-  &copy; 2025 itunes.bg – Premium AirPods Reseller. Не е свързан с Apple Inc.
-</footer>
 
-  
+  <footer class="bg-black text-gray-400 text-sm text-center py-10 border-t border-gray-700 mt-20">
+    &copy; 2025 itunes.bg – Premium AirPods Reseller. Не е свързан с Apple Inc.
+  </footer>
+
+  <script>
+    gsap.from("h1", { y: -80, opacity: 0, duration: 1 });
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      const menu = document.getElementById("dropdown-menu");
+      menu.classList.toggle("hidden");
+    });
+  </script>
 </body>
 </html>
+
